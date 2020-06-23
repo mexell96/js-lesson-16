@@ -83,7 +83,7 @@ table {
     display: flex;
     flex-direction: row;
 }
-#left_right {
+#left-right {
     display: flex;
     flex-direction: column;
     background-color: rgba(217, 236, 38, 0.644);
@@ -191,7 +191,8 @@ table {
         display: flex;
         flex-direction: column;
     }
-    #left_right {
+    #left-right {
         width: 310px;
+        background-color: rgba(217, 236, 38, 0.644);
     }
 }
