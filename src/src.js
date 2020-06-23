@@ -296,6 +296,7 @@ li3.classList.add('displayNone');
 //----------------------------------------------------------------------------------------------
 document.getElementById('switchDepartment').addEventListener('change', function (ev) {
     if (ev.target.selectedIndex === 0) {
+        clearButton();
         document.getElementById('li0').classList.remove('displayInline');
         document.getElementById('li0').classList.add('displayNone');
         document.getElementById('li3').classList.remove('displayInline');
@@ -415,49 +416,49 @@ left.addEventListener('click', function (ev) {
 });
 // кнопка очистить------------------------------------------------------------------------------------------
 document.getElementById('clear').addEventListener('click', function (ev) {
-    function clearButton() {
-        li0.classList.remove('bold');
-        li1.classList.remove('bold');
-        li2.classList.remove('bold');
-        li3.classList.remove('bold');
-        li4.classList.remove('bold');
-        li5.classList.remove('bold');
-        //----------------------------------------
-        document.getElementById('li2').classList.remove('displayNone');
-        document.getElementById('li1').classList.remove('displayNone');
-        document.getElementById('li5').classList.remove('displayNone');
-        document.getElementById('li4').classList.remove('displayNone');
-        document.getElementById('span0').classList.remove('chevron-bottom');
-        document.getElementById('span1').classList.remove('chevron-bottom');
-        document.getElementById('span3').classList.remove('chevron-bottom');
-        document.getElementById('span4').classList.remove('chevron-bottom');
-        //----------------------------------------
-        document.getElementById('li2').classList.add('displayInline');
-        document.getElementById('li1').classList.add('displayInline');
-        document.getElementById('li5').classList.add('displayInline');
-        document.getElementById('li4').classList.add('displayInline');
-        document.getElementById('span0').classList.add('chevron-right');
-        document.getElementById('span1').classList.add('chevron-right');
-        document.getElementById('span3').classList.add('chevron-right');
-        document.getElementById('span4').classList.add('chevron-right');
-        //-----------------------------------------
-        curr_sel.value = '0';
-        document.getElementById('switchDepartment').selectedIndex = 0;
-        currRate = '1';
-        currScale = '1';
-        perem = [];
-        //-------------------------------------------------------------------------------------
-        document.getElementById('li0').classList.remove('displayInline');
-        document.getElementById('li0').classList.add('displayNone');
-        document.getElementById('li3').classList.remove('displayInline');
-        document.getElementById('li3').classList.add('displayNone');
-        // удаление tBody----------------------------------------------------------------------
-        deleteTBody();
-        // заблокировать переключатель валют
-        disabledButton.setAttribute('disabled', 'disabled');
-    };
     clearButton();
 })
+function clearButton() {
+    li0.classList.remove('bold');
+    li1.classList.remove('bold');
+    li2.classList.remove('bold');
+    li3.classList.remove('bold');
+    li4.classList.remove('bold');
+    li5.classList.remove('bold');
+    //----------------------------------------
+    document.getElementById('li2').classList.remove('displayNone');
+    document.getElementById('li1').classList.remove('displayNone');
+    document.getElementById('li5').classList.remove('displayNone');
+    document.getElementById('li4').classList.remove('displayNone');
+    document.getElementById('span0').classList.remove('chevron-bottom');
+    document.getElementById('span1').classList.remove('chevron-bottom');
+    document.getElementById('span3').classList.remove('chevron-bottom');
+    document.getElementById('span4').classList.remove('chevron-bottom');
+    //----------------------------------------
+    document.getElementById('li2').classList.add('displayInline');
+    document.getElementById('li1').classList.add('displayInline');
+    document.getElementById('li5').classList.add('displayInline');
+    document.getElementById('li4').classList.add('displayInline');
+    document.getElementById('span0').classList.add('chevron-right');
+    document.getElementById('span1').classList.add('chevron-right');
+    document.getElementById('span3').classList.add('chevron-right');
+    document.getElementById('span4').classList.add('chevron-right');
+    //-----------------------------------------
+    curr_sel.value = '0';
+    document.getElementById('switchDepartment').selectedIndex = 0;
+    currRate = '1';
+    currScale = '1';
+    perem = [];
+    //-------------------------------------------------------------------------------------
+    document.getElementById('li0').classList.remove('displayInline');
+    document.getElementById('li0').classList.add('displayNone');
+    document.getElementById('li3').classList.remove('displayInline');
+    document.getElementById('li3').classList.add('displayNone');
+    // удаление tBody----------------------------------------------------------------------
+    deleteTBody();
+    // заблокировать переключатель валют
+    disabledButton.setAttribute('disabled', 'disabled');
+};
 //проверяем какой отдел выбираем-------------------------------------------------------------------------------
 left.addEventListener('click', function (ev) {
     if (ev.target.nodeName === "LI" && ev.target.dataset.sign === 'Developers') {
